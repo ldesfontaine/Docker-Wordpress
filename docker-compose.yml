@@ -35,7 +35,17 @@ services:
       - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - '80:80'
+      - '443:443'
     depends_on:
       - wordpress
+
+  certbot:
+    container_name: Certbot
+    image: certbot/certbot
+    volumes:
+      - ./src:/var/www/html
+      - /.docker/etc/letsencrypt:/etc/letsencrypt
+    command: certonly --webroot -w /var/www/html -d ${NGINX_DOMAIN} --agree-tos --email ${EMAIL} --no-eff-email --force-renewal
+
 volumes:
   db_data:
