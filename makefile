@@ -1,11 +1,11 @@
-.PHONY: prod start stop
-
-#prod:
-#	docker-compose run --rm certbot certonly --webroot -w /var/www/html -d $(NGINX_DOMAIN) -m $(EMAIL) --agree-tos --no-eff-email
-#	docker-compose up -d
+.PHONY: start stop
 
 start:
+ifeq ($(ENV),dev)
+	docker-compose up -d
+else
 	docker-compose up
+endif
 
 stop:
 	docker-compose down
