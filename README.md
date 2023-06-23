@@ -6,6 +6,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 Docker : Instructions d'installation de Docker
 Docker Compose : Instructions d'installation de Docker Compose
+Make
 ## Configuration
 Avant de lancer l'application, vous devez effectuer quelques configurations. Assurez-vous d'avoir les valeurs suivantes définies dans votre environnement :
 
