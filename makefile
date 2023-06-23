@@ -1,4 +1,4 @@
-.PHONY: start stop
+.PHONY: start stop db-import db-export
 
 start:
 ifeq ($(ENV),dev)
@@ -9,3 +9,7 @@ endif
 
 stop:
 	docker-compose down
+
+db-export:
+
+db-import:
